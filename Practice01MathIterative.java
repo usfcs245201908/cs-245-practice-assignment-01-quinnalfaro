@@ -4,24 +4,39 @@ public class Practice01MathIterative implements Practice01Math {
 	public int fib (int n){
 		if (n < 0){
 			throw new IllegalArgumentException();
+		} else if (n <= 1){
+			return n;
 		} 
-		while (n < 1) {
-			return 1;
+		
+		int returnVal = 1;
+		int previous = 1;
+
+		for(int i = 2; i < n; i++) {
+			int temp = returnVal;
+			returnVal += previous;
+			previous = temp;
 		}
-		return 1;
+
+		return returnVal;
+
+
 	}
 
 
 	@Override
 	public int fact (int n) {
-		int returnVal = 1;
-		if (n < 0){
+		if (n <= 0){
 			throw new IllegalArgumentException();
 		} 
-		while (n > 1){
-			returnVal = returnVal * n;
-			 n = n - 1;
+
+		int returnVal = 1;
+		int i = 1;
+
+		while(i <= n){
+			returnVal = returnVal * i;
+			i++;
 		}
+		
 		return returnVal;
 	}
 }
