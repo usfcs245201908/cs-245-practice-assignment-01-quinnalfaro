@@ -25,18 +25,17 @@ public class Practice01MathIterative implements Practice01Math {
 
 	@Override
 	public int fact (int n) {
-		if (n <= 0){
+		if (n < 0){
 			throw new IllegalArgumentException();
 		} 
 
 		int returnVal = 1;
 		int i = 1;
 
-		while(i <= n){
-			returnVal = returnVal * i;
+		while(n > i){
 			i++;
+			returnVal = returnVal * i;
 		}
-		
 		return returnVal;
 	}
 }

@@ -15,10 +15,9 @@ public class Practice01MathRecursive implements Practice01Math {
 	public int fact (int n) {
 		if (n < 0){
 			throw new IllegalArgumentException();
-		} else if (n == 1) {
+		} else if (n == 1 || n == 0) {
 			return n;
 		}
-		return fib(n - 1) * fib(n - 2);
+		return n * fact(n - 1);
 	}
 }
-// for (int coll = 0; col < n; col ++)
